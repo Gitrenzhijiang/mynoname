@@ -9,13 +9,26 @@
 
     <body>
         <div class="container">
-            <div class="system-item"></div>
+            <div class="system-item">
+                <button id="btn">add child</button>
+            </div>
             <div class="area">
                 <div id="area-container">
-                    <div id="a1"></div>
+                    <div id="a1">
+                    
+                        
+                    </div>
                     <div id="a2"></div>
                 </div>
             </div>
         </div>
+        <script src="move.js"></script>
+        <script src="layout.js"></script>
+        <script>
+            document.getElementById('btn').onclick = () => {
+                createFivePlayers(document.getElementById('a1'));
+            }
+            
+        </script>
     </body>
 </html>
