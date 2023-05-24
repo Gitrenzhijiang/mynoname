@@ -3,7 +3,7 @@
     <head>
         <title>我的无名杀</title>
 
-        <link href="index.css" rel="stylesheet" />
+        <link href="css/index.css" rel="stylesheet" />
 
     </head>
 
@@ -15,18 +15,35 @@
             <div class="area">
                 <div id="area-container">
                     <div id="a1">
-                    
+                        <div id='test1' style="width: 150px; height:180px; background:url('image/theme/wood.jpg');
+                        position:absolute; top:0;left:calc(100% / 3 - 100px); 
+                        border-radius: 8px;
+                        z-index: 2;">
+                            <div style="width: 136px; height:166px; background-image: url('image/character/caocao.jpg');
+                            background-size: cover;
+                            position: absolute;top:7px; left:7px; z-index: 2;">
+
+                            </div>
+                        </div>
                         
                     </div>
                     <div id="a2"></div>
                 </div>
             </div>
         </div>
-        <script src="move.js"></script>
-        <script src="layout.js"></script>
+        <script src="js/move.js"></script>
+        <script src="js/game.js"></script>
+        <script src="js/layout.js"></script>
+        
         <script>
+            // createFivePlayers(document.getElementById('a1'));
+            
             document.getElementById('btn').onclick = () => {
-                createFivePlayers(document.getElementById('a1'));
+                let card = document.getElementById('test1');
+                console.info('test test:', card.style['top'], card.style['left'], card.offsetTop, 
+                    card.offsetLeft);
+                move(card, '400px', '500px', 3);
+                
             }
             
         </script>

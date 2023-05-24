@@ -5,8 +5,9 @@ function move(e, targetTop, targetLeft, base) {
     }
     
     let timer;
-    let startTop = parseFloat(e.style['top']) || 0;
-    let startLeft = parseFloat(e.style['left']) || 0;
+    let startTop = parseFloat(e.style['top']) || e.offsetTop;
+    let startLeft = parseFloat(e.style['left']) || e.offsetLeft;
+    
     let endTop = parseFloat(targetTop);
     let endLeft = parseFloat(targetLeft);
     
@@ -20,8 +21,8 @@ function move(e, targetTop, targetLeft, base) {
     
 
     timer = setInterval(()=> {
-        startTop = parseFloat(e.style['top']) || 0;
-        startLeft = parseFloat(e.style['left']) || 0;
+        startTop = parseFloat(e.style['top']) || e.offsetTop;
+        startLeft = parseFloat(e.style['left']) || e.offsetLeft;
         
         // top 越界处理
         let tempTop = startTop + diffTop;
@@ -34,7 +35,7 @@ function move(e, targetTop, targetLeft, base) {
         e.style['top'] = tempTop + "px";
         // left 越界处理
         let tempLeft = diffTop * k + startLeft;
-        
+        console.info('renzhijiang templeft:', diffTop, k, startLeft, tempLeft)
         if (diffTop * k > 0 && tempLeft > endLeft) {
             tempLeft = endLeft;
         } else if (diffTop * k < 0 && tempLeft < endLeft) {

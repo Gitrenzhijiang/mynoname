@@ -5,6 +5,7 @@
 body {
     height: 100vh;
 }
+
 .container {
     width: 100%;
     height: 100%;
@@ -18,13 +19,14 @@ body {
 
 }
 .system-item {
-    flex-basis:7.89%;
+    flex-basis:6.72%;
     
     background-color:blueviolet;
 }
 .area {
-    flex-basis: 92.11%;
+    flex-basis: 93.28%;
     background-color: red;
+    height: calc(93% + 20px);
 }
 
 #area-container {
@@ -35,13 +37,13 @@ body {
     
 }
 #a1 {
-    flex-basis:78.57%;
+    flex-basis:83.19%;
     position: relative;
     
     background-color:yellow;
 }
 #a2 {
-    flex-basis:21.43%;
+    flex-basis:16.81%;
     
     background-color:rgb(190, 31, 169);
 }
