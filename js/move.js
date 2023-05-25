@@ -35,7 +35,7 @@ function move(e, targetTop, targetLeft, base) {
         e.style['top'] = tempTop + "px";
         // left 越界处理
         let tempLeft = diffTop * k + startLeft;
-        console.info('renzhijiang templeft:', diffTop, k, startLeft, tempLeft)
+        
         if (diffTop * k > 0 && tempLeft > endLeft) {
             tempLeft = endLeft;
         } else if (diffTop * k < 0 && tempLeft < endLeft) {
@@ -44,11 +44,9 @@ function move(e, targetTop, targetLeft, base) {
         // 设置新的 left
         e.style['left'] = tempLeft + 'px';
         
-        console.log("current top, left: ", e.style['top'], e.style['left']);
         if (tempTop == endTop) {
             e.style['top'] = endTop + 'px';
             e.style['left'] = endLeft + 'px';
-            console.log("final top, left: ", e.style['top'], e.style['left']);
             clearInterval(timer);
         }
     }, 20);

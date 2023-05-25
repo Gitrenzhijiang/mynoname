@@ -2,8 +2,10 @@
     margin: 0;
     padding: 0;
 }
+
 body {
     height: 100vh;
+    
 }
 
 .container {
@@ -17,15 +19,29 @@ body {
     /* flex-grow: 1; flex item 主尺寸的 flex 增长系数 */
     /* flex-shrink: 2; flex item 的收缩规则 */
 
+    background: url('../image/background/ol_bg.jpg');
+    background-size: cover;
 }
 .system-item {
     flex-basis:6.72%;
     
-    background-color:blueviolet;
+    display: flex;
+    align-items: center;
+}
+.system-item .btn {
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: 4px;
+    background-image: url('../image/theme/wood2.jpg');
+    font-size: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 .area {
     flex-basis: 93.28%;
-    background-color: red;
+    /* background-color: red; */
     height: calc(93% + 20px);
 }
 
@@ -40,21 +56,105 @@ body {
     flex-basis:83.19%;
     position: relative;
     
-    background-color:yellow;
+    /* background-color:yellow; */
 }
 #a2 {
     flex-basis:16.81%;
-    
-    background-color:rgb(190, 31, 169);
+    position: relative;
+    /* background-color:rgb(190, 31, 169); */
 }
+
 
 .base-player {
     position:absolute;
     width: 150px;
     height: 180px;
-    border: solid;
-}
+    background:url('../image/theme/wood.jpg');
+    position:absolute; 
+    border-radius: 8px;
+    z-index: 1;
 
+    top:0;
+    left:calc(100% / 4 - 100px); 
+    
+}
+.base-player .avatar {
+    width: 136px; 
+    height:166px; 
+    background-image: url('../image/character/caocao.jpg');
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    top:7px; 
+    left:7px; 
+}
+.base-player .hp {
+    position:absolute;
+    left: 121px;
+    bottom: 15px;
+    width: 18px;
+    line-height: 16px;
+    z-index: 3;
+}
+.base-player .hp div {
+    position: relative;
+    background: rgba(57, 123, 4, 1);
+    border: 1px solid rgba(39, 79, 7, 1);
+    border-radius: 100%;
+    box-shadow: rgba(0,0,0,0.2) 1px -1px 2px inset;
+    width: 10px;
+    height: 10px;
+    margin-left: 0;
+    
+}
+.base-player .identity {
+    position:absolute;
+    border: none;
+    width: 24px;
+    height:24px;
+    border-radius: 100%;
+    top: -8px;
+    left: 132px;
+    z-index: 4;
+
+   text-shadow:  black 0 0 1px,rgba(232, 53, 53,1) 0 0 2px,rgba(232, 53, 53,1) 0 0 5px,rgba(232, 53, 53,1) 0 0 10px,
+rgba(232, 53, 53,1) 0 0 10px,rgba(232, 53, 53,1) 0 0 20px,rgba(232, 53, 53,1) 0 0 20px;
+
+}
+.base-player .identity div {
+    position: relative;
+    font-size: 22px;
+    color: white;
+    font-family: huangcao, xinwei;
+    top: 0;
+}
+.base-player .name {
+    position:absolute;
+    left: 13px;
+    top:21px;
+    font-family: xingkai, xinwei;
+    font-size: 20px;
+    text-shadow: black 0 0 1px,rgba(255, 203, 0,1) 0 0 2px,rgba(255, 203, 0,1) 0 0 2px,rgba(255, 203, 0,1) 0 0 2px,
+    rgba(255, 203, 0,1) 0 0 2px,black 0 0 1px;
+    color: white;
+    z-index: 3;
+}
+.base-player .count {
+    position: absolute;
+    background: rgba(85, 134, 57, 1);
+    color: white;
+    text-shadow: black 0 0 2px; 
+   
+    border: 1px solid rgba(39, 79, 7, 1);
+    border-radius: 3px 0 0 3px;
+    left: -6px;
+    bottom: 30px;
+    padding: 2px;
+    width: 8px;
+    line-height: 20px;
+    text-align: left;
+    z-index: 3;
+}
 @keyframes moveCard {
     0% {
         bottom:0px;
